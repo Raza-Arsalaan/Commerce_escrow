@@ -12,8 +12,10 @@ import {AuthCaptureEscrowSmartWalletBase} from "../base/AuthCaptureEscrowSmartWa
 
 contract AuthCaptureEscrowForkBase is AuthCaptureEscrowSmartWalletBase {
     // Base mainnet USDC address
-    address constant BASE_USDC = 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913;
-    address constant USDC_WHALE = 0x3304E22DDaa22bCdC5fCa2269b418046aE7b566A; // Binance
+    address constant BASE_USDC = 0x036CbD53842c5426634e7929541eC2318f3dCF7e;
+    // 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+    address constant USDC_WHALE = 0xFaEc9cDC3Ef75713b48f46057B98BA04885e3391; 
+    //  0x3304E22DDaa22bCdC5fCa2269b418046aE7b566A; // Binance
     uint256 public MAX_AMOUNT;
 
     address payable constant SPEND_PERMISSION_MANAGER = payable(0xf85210B21cC50302F477BA56686d2019dC9b67Ad);
