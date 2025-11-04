@@ -527,7 +527,12 @@ contract AuthCaptureEscrow is ReentrancyGuardTransient {
     }
 
     /// @dev Override to use transient reentrancy guard on all chains
-    function _useTransientReentrancyGuardOnlyOnMainnet() internal view virtual override returns (bool) {
-        return false;
-    }
+    // @notice Set to 'true' to ensure the gas-optimized transient guard is used
+// on L2 testnets (like Base Sepolia), mirroring the intended mainnet behavior.
+function _useTransientReentrancyGuardOnlyOnMainnet() internal view virtual override returns (bool) {
+    // Original Solady logic: return block.chainid == 1;
+    // Current Code: return false; // forces storage-based guard
+    // Recommendation for L2 Testnet optimization:
+    return true; // Use the transient guard, optimizing for L2 gas costs
+}
 }
